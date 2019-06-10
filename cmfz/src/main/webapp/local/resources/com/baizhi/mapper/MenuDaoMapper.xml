@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.MenuDao">
+	<resultMap type="Menu" id="menuMap">
+		<id column="amenu_id" property="menuId"/>
+		<result column="atitle" property="title"/>
+		<result column="aiconCls" property="iconCls"/>
+		<result column="aparent_id" property="parentId"/>
+		<result column="ahref" property="href"/>
+		<collection property="menus" ofType="Menu">
+			<id column="bmenu_id" property="menuId"/>
+			<result column="btitle" property="title"/>
+			<result column="biconCls" property="iconCls"/>
+			<result column="bparent_id" property="parentId"/>
+			<result column="bhref" property="href"/>
+		</collection>
+	</resultMap>
+	<select id="selectAll" resultMap="menuMap">
+		select a.menu_id amenu_id,a.title atitle,a.iconCls aiconCls,a.parent_id aparent_id,a.href ahref,
+		b.menu_id bmenu_id,b.title btitle,b.iconCls biconCls,b.parent_id bparent_id,b.href bhref
+		from c_menu a inner join c_menu b on a.menu_id = b.parent_id order by a.menu_id
+	</select>
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.CarouselDao">
+	<resultMap type="Carousel" id="carouselMap">
+		<id column="carousel_id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="imgPath" property="imgPath"/>
+		<result column="description" property="description"/>
+		<result column="status" property="status"/>
+		<result column="create_time" property="createTime"/>
+	</resultMap>
+	<select id="selectCarousels" resultMap="carouselMap">
+		select carousel_id,name,imgPath,description,status,create_time
+		from c_carousel order by create_time asc limit #{begin},#{rows}
+	</select>
+	<select id="selectRecords" resultType="Integer">
+		select count(*) from c_carousel
+	</select>
+	<insert id="insertCarousel">
+		insert into c_carousel values(#{id},#{name},#{imgPath},#{description},#{status},#{createTime})
+	</insert>
+	<update id="updateCarousel">
+		update c_carousel set name = #{name},description=#{description},status=#{status}
+		where carousel_id = #{id}
+	</update>
+	<update id="updateCarouselImgPath">
+		update c_carousel set imgPath = #{imgPath} where carousel_id = #{id}
+	</update>
+	<delete id="deleteCarousel">
+		delete from c_carousel where carousel_id = #{id}
+	</delete>
+</mapper>
