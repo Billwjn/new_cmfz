@@ -64,7 +64,9 @@
                             </div>
                             <div id="albumManager" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                                 <div class="panel-body">
-                                    专辑管理
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li role="presentation"><a href="javascript:$('#center').load('album.jsp')">专辑管理</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
