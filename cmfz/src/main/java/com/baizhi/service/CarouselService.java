@@ -10,4 +10,5 @@ public interface CarouselService {
     String addCarousel(Carousel carousel);
     void modifyCarousel(Carousel carousel);
     void modifyImgpath(Carousel carousel);
+    void removeCarousel(String id);
 }

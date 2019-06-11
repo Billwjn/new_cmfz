@@ -31,10 +31,10 @@ public class CarouselServiceImpl implements CarouselService {
 
     @Override
     public String addCarousel(Carousel carousel) {
-        String carouselId = UUID.randomUUID().toString();
-        carousel.setCarouselId(carouselId);
+        String id = UUID.randomUUID().toString();
+        carousel.setId(id);
         carouselDao.insert(carousel);
-        return carouselId;
+        return id;
     }
 
     @Override
@@ -45,5 +45,10 @@ public class CarouselServiceImpl implements CarouselService {
     @Override
     public void modifyImgpath(Carousel carousel) {
         carouselDao.updateImgpath(carousel);
+    }
+
+    @Override
+    public void removeCarousel(String id) {
+        carouselDao.delete(id);
     }
 }

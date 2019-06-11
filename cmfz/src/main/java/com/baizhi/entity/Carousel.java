@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Carousel implements Serializable {
-    private String carouselId;
+    private String id;
     private String name;
     private String imgPath;
     private String description;

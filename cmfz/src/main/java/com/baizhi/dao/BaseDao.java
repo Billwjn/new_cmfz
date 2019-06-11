@@ -9,4 +9,5 @@ public interface BaseDao<T> {
     void insert(T t);
     Integer selectRecords();
     void update(T t);
+    void delete(String id);
 }

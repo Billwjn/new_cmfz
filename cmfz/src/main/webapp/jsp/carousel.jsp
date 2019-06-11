@@ -7,7 +7,7 @@
             styleUI:"Bootstrap",
             colNames:["编号","名称","图片","描述","状态","创建时间"],
             colModel:[
-                {"name":"carouselId", editable:true},
+                {"name":"id", editable:true},
                 {"name":"name",editable:true},
                 {"name":"imgPath",formatter:function(cellvalue, options, rowObject){
                         return "<img style='width:50px;height:50px' src='${pageContext.request.contextPath}/upload/"+cellvalue+"'/>"
@@ -39,7 +39,7 @@
                         $("#carouselTable").trigger("reloadGrid")
                     }
                 })
-                return "hello";
+                return [true];
             }
         })
     })

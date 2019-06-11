@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/cmfz/cmfz.iml" filepath="$PROJECT_DIR$/cmfz/cmfz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/new_cmfz.iml" filepath="$PROJECT_DIR$/.idea/new_cmfz.iml" />
     </modules>
   </component>
 </project>

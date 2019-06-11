@@ -37,8 +37,9 @@ public class CarouselController {
             }
             carouselService.modifyCarousel(carousel);
         }else{
-            System.out.println(id[0]);
-            System.out.println(id[1]);
+            for (String s : id) {
+                carouselService.removeCarousel(s);
+            }
         }
         return null;
     }
@@ -54,7 +55,7 @@ public class CarouselController {
         try {
             imgPath.transferTo(new File(realPath+"/"+name));
             Carousel carousel = new Carousel();
-            carousel.setCarouselId(id);
+            carousel.setId(id);
             carousel.setImgPath(name);
             carouselService.modifyImgpath(carousel);
         } catch (IOException e) {
