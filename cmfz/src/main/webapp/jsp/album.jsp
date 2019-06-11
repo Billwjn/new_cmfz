@@ -4,7 +4,18 @@
         $("#albumTable").jqGrid({
             url:"${pageContext.request.contextPath}/album/queryAll",
             datatype:"json",
-            colNames:[]
+            colNames:["专辑编号","专辑名称","专辑封面","音频数量","专辑得分","作者","播音员","专辑简介","发布时间"],
+            colModel:[
+                {"name":"id"},
+                {"name":"title"},
+                {"name":"cover"},
+                {"name":"count"},
+                {"name":"score"},
+                {"name":"author"},
+                {"name":"broadcast"},
+                {"name":"brief"},
+                {"name":"publishTime"}
+                ]
         })
     })
 </script>
