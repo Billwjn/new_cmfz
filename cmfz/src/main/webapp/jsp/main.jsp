@@ -80,7 +80,9 @@
                             </div>
                             <div id="articleManager" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                 <div class="panel-body">
-                                    文章管理
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li role="presentation"><a href="javascript:$('#center').load('article.jsp')">文章管理</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
