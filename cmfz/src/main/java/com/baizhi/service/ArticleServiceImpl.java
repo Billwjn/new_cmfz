@@ -69,4 +69,9 @@ public class ArticleServiceImpl implements ArticleService {
         Article article = articleDao.selectOneArticle(id);
         return article;
     }
+
+    @Override
+    public void removeArticle(String id) {
+        articleDao.delete(id);
+    }
 }

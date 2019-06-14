@@ -31,7 +31,7 @@
                 {name:"publishTime"},
                 {name:"preview",formatter:function(cellvalue, options, rowObject){
                     var id = rowObject.id;
-                    return "<button onclick=\"showArticle('"+id+"')\" data-toggle=\"modal\" data-target=\"#previewModal\" type=\"button\" class=\"btn btn-primary btn-lg\">预览</button><button type=\"button\" class=\"btn btn-warning btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\">修改</button><button type=\"button\" class=\"btn btn-danger btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\">删除</button>"
+                    return "<button onclick=\"showArticle('"+id+"')\" data-toggle=\"modal\" data-target=\"#previewModal\" type=\"button\" class=\"btn btn-primary btn-lg\">预览</button><button type=\"button\" class=\"btn btn-warning btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\">修改</button><button type=\"button\" onclick=\"deleteArticle('"+id+"')\" class=\"btn btn-danger btn-lg\">删除</button>"
                 }}
             ],
             pager:"articlePager",
@@ -84,8 +84,18 @@
             }
         })
     }
+    function deleteArticle(id){
+        $.ajax({
+            url:"${pageContext.request.contextPath}/article/removeArticle",
+            data:{id:id},
+            success:function(){
+                $("#articleTable").trigger("reloadGrid");
+            }
+        })
+    }
 </script>
-
+<button class="btn btn-default" type="submit">Button</button>
+<button class="btn btn-default" type="submit">Button</button>
 <table id="articleTable"></table>
 <div id="articlePager"></div>
 

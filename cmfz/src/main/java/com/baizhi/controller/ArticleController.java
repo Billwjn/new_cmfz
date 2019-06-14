@@ -41,4 +41,8 @@ public class ArticleController {
         Article article = articleService.queryOneArticle(id);
         return article.getContent();
     }
+    @RequestMapping("removeArticle")
+    public void removeArticle(String id){
+        articleService.removeArticle(id);
+    }
 }

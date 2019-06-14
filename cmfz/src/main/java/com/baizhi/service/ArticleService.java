@@ -13,4 +13,5 @@ public interface ArticleService {
     List<Guru> queryGurus();
     String addArticle(Article article , MultipartFile imgFile , HttpSession session);
     Article queryOneArticle(String id);
+    void removeArticle(String id);
 }

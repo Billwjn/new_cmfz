@@ -18,4 +18,7 @@
         select article_id id , guru_id guruId , title , content , imgPath , publish_time publishTime
         from c_article where article_id = #{id}
     </select>
+    <delete id="delete">
+        delete from c_article where article_id = #{id}
+    </delete>
 </mapper>
