@@ -86,6 +86,24 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#userManager" aria-expanded="false" aria-controls="collapseThree">
+                                        用户
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="userManager" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li role="presentation"><a href="javascript:$('#center').load('user.jsp')">用户管理</a></li>
+                                        <li role="presentation"><a href="javascript:$('#center').load('statistics.jsp')">每月注册用户</a></li>
+                                        <li role="presentation"><a href="javascript:$('#center').load('distribution.jsp')">全国用户分布图</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
             </div>
             <%--右侧轮播图部分--%>
