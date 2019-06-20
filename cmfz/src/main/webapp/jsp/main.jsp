@@ -14,6 +14,8 @@
     <script src="../jqgrid/js/i18n/grid.locale-cn.js"></script>
     <script src="../jqgrid/extend/js/trirand/jquery.jqGrid.min.js"></script>
     <script src="../boot/js/ajaxfileupload.js"></script>
+    <script src="../echarts/echarts.js"></script>
+    <script src="../echarts/china.js"></script>
     <title>持明法洲后台管理系统</title>
 </head>
 <body>

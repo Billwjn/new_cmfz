@@ -1,6 +1,9 @@
 <%@page contentType="text/html; UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
 
 <script>
+    function clickExport(){
+        location.href="${pageContext.request.contextPath}/user/export"
+    }
     $(function(){
         $("#userTable").jqGrid({
             url:"${pageContext.request.contextPath}/user/queryAll",
@@ -28,9 +31,13 @@
             styleUI:"Bootstrap"
         })
     })
+
 </script>
 <h1 class="page-header">
     用户展示
 </h1>
+<div>
+    <button class="btn btn-default" style="margin-bottom: 10px" onclick="clickExport()">一键导出</button>
+</div>
 <table id="userTable"></table>
 <div id="userPager"></div>

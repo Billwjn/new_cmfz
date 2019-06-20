@@ -8,4 +8,17 @@
     <select id="selectRecords" resultType="Integer">
         select count(*) from c_user
     </select>
+    <select id="selectStatistics" resultType="UserDTO">
+        select count(*) counts , left(regist_time,7) months from c_user group by left(regist_time,7) order by left(regist_time,7)
+    </select>
+    <select id="selectDistributionOnMan" resultType="UserDTO">
+        select province name , count(*) value from c_user where gender = '男' group by province
+    </select>
+    <select id="selectDistributionOnWoman" resultType="UserDTO">
+        select province name , count(*) value from c_user where gender = '女' group by province
+    </select>
+    <select id="selectAllUsers" resultType="User">
+        select user_id id , mobile , username,password,salt,dharmaName,province,city,gender,sign,profile,status,regist_time registTime
+        from c_user
+    </select>
 </mapper>

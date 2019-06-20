@@ -53,6 +53,7 @@ public class CarouselController {
             file.mkdir();
         }
         try {
+            System.out.println("======================"+realPath+"/"+name);
             imgPath.transferTo(new File(realPath+"/"+name));
             Carousel carousel = new Carousel();
             carousel.setId(id);
