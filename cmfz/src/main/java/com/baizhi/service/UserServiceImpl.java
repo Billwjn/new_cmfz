@@ -3,15 +3,18 @@ package com.baizhi.service;
 import com.baizhi.dao.UserDao;
 import com.baizhi.entity.User;
 import com.baizhi.entity.UserDTO;
+import com.baizhi.util.MD5Utils;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import io.goeasy.GoEasy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
@@ -59,5 +62,19 @@ public class UserServiceImpl implements UserService {
     public List<User> queryAllUsers() {
         List<User> users = userDao.selectAllUsers();
         return users;
+    }
+
+    @Override
+    public String regist(User user) {
+        String id = UUID.randomUUID().toString();
+        String salt = MD5Utils.getSalt();
+        String secretPassword = MD5Utils.getPassword(user.getPassword());
+        String status = "正常";
+        user.setId(id);
+        user.setSalt(salt);
+        user.setPassword(secretPassword);
+        user.setStatus(status);
+        userDao.insert(user);
+        return id;
     }
 }

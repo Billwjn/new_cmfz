@@ -10,4 +10,5 @@ public interface UserService {
     Map<String,Object> queryStatistics();
     Map<String,Object> queryDistribution();
     List<User> queryAllUsers();
+    String regist(User user);
 }

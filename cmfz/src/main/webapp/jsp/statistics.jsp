@@ -1,14 +1,25 @@
 <%@page isELIgnored="false" pageEncoding="UTF-8" contentType="text/html; UTF-8" %>
-
 <script type="text/javascript">
+    var goEasy = new GoEasy({
+        appkey: 'BC-82da440207614095b697816ca3ef5935'
+    });
+    $(function(){
+        $.ajax({
+            url:"${pageContext.request.contextPath}/user/queryStatistics",
+            type:"post",
+            success:function(){
+
+            }
+        })
+    })
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'));
-    $.ajax({
-        url:'${pageContext.request.contextPath}/user/queryStatistics',
-        type:"post",
-        datatype:"json",
-        success:function(data){
-            // 指定图表的配置项和数据
+
+    goEasy.subscribe({
+        channel:'demo_channel',
+        onMessage: function(message){
+            var obj = message.content;
+            var data = JSON.parse(obj);
             var option = {
                 tooltip: {},
                 legend: {
@@ -27,7 +38,7 @@
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option);
         }
-    })
+    });
 
 </script>
 <h1 class="page-header">

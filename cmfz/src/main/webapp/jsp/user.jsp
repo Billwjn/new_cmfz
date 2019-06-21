@@ -5,6 +5,7 @@
         location.href="${pageContext.request.contextPath}/user/export"
     }
     $(function(){
+
         $("#userTable").jqGrid({
             url:"${pageContext.request.contextPath}/user/queryAll",
             datatype:"json",

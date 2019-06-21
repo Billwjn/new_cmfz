@@ -21,4 +21,7 @@
         select user_id id , mobile , username,password,salt,dharmaName,province,city,gender,sign,profile,status,regist_time registTime
         from c_user
     </select>
+    <insert id="insert">
+        insert into c_user values(#{id},#{mobile},#{username},#{password},#{salt},#{dharmaName},#{province},#{city},#{gender},#{sign},#{profile},#{status},#{registTime})
+    </insert>
 </mapper>

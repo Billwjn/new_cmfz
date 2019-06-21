@@ -19,7 +19,7 @@
             multiselect:true,
             pager:"#carouselPager",
             rowNum:3,
-            height:300,
+            height:'100%',
             rowList:[3,5,7],
             viewrecords:true,
             rownumbers:true,

@@ -16,6 +16,7 @@
     <script src="../boot/js/ajaxfileupload.js"></script>
     <script src="../echarts/echarts.js"></script>
     <script src="../echarts/china.js"></script>
+    <script type="text/javascript" src="https://cdn-hangzhou.goeasy.io/goeasy.js"></script>
     <title>持明法洲后台管理系统</title>
 </head>
 <body>
