@@ -1,5 +1,6 @@
 package com.baizhi.service;
 
+import com.baizhi.annotation.RedisCacheAnnotation;
 import com.baizhi.dao.CarouselDao;
 import com.baizhi.entity.Carousel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ public class CarouselServiceImpl implements CarouselService {
     private CarouselDao carouselDao;
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
+    @RedisCacheAnnotation
     public Map<String , Object> queryAll(Integer rows , Integer page) {
         Integer records = carouselDao.selectRecords();
         Integer begin = (page - 1)*rows;
